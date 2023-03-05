@@ -6,6 +6,7 @@ import org.example.MaxCategory;
 
 
 import java.io.IOException;
+import java.security.Key;
 import java.util.HashMap;
 
 public class MainTest  {
@@ -22,8 +23,8 @@ public class MainTest  {
         testMap.put("Другое",350L);
         testMap.put("акции",1200L);
         testMap.put("быт",150L);
-        String actualCat = MaxCategory.maxCategory(String.valueOf(testMap)).getKey();
-        Long actualAmount = MaxCategory.maxCategory(String.valueOf(testMap)).getValue();
+        String actualCat = MaxCategory.maxCat(testMap).getKey();
+        Long actualAmount = MaxCategory.maxCat(testMap).getValue();
         Assertions.assertEquals("еда", actualCat);
         Assertions.assertEquals(1400, actualAmount);
     }
